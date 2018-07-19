@@ -85,6 +85,35 @@ namespace Collection
 
                     }
                     break;
+
+                case 5:
+                    {
+                        LinkedList<string> link = new LinkedList<string>();
+                        link.AddFirst("Alex");
+                        link.AddFirst("Gjek");
+                        link.AddFirst("Bob");
+                        link.AddFirst("Shon");
+
+                        //отобразим элементы в прямом направлении
+                        LinkedListNode<string> node;
+                        for (node=link.First;node!=null; node=node.Next)
+                        {
+                            if (node.Value == link.Last.Value)
+                            {
+                                Console.WriteLine(node.Previous.Value + "-" + node.Value);
+                            }
+                            else if(node.Value==link.First.Value)
+                            {
+                                Console.WriteLine(node.Value + "-" + node.Next.Value);
+                            }
+                            else
+                            {
+                                Console.WriteLine(node.Previous.Value + "-" + node.Value + "-" + node.Next.Value);
+                            }
+                            
+                        }
+                    }
+                    break;
             }
         }
 
